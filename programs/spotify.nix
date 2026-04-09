@@ -1,7 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    spotify
-  ];
+  home.packages = [ pkgs.spotify ];
 }
