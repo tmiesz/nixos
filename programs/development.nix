@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    nodejs
+    nodejs_22
+    dotnet-sdk_10
   ];
 }
