@@ -5,6 +5,7 @@
     extensions = [
       "html"
       "nix"
+      "csharp"
     ];
 
     userSettings = {
@@ -25,5 +26,16 @@
         "!nil"
       ];
     };
+
+    userKeymaps = [
+      {
+        bindings = {
+          "ctrl-h" = "workspace::ActivatePaneLeft";
+          "ctrl-l" = "workspace::ActivatePaneRight";
+          "ctrl-k" = "workspace::ActivatePaneUp";
+          "ctrl-j" = "workspace::ActivatePaneDown";
+        };
+      }
+    ];
   };
 }
