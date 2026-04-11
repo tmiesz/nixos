@@ -12,6 +12,7 @@
     ./programs/zed-editor.nix
     ./programs/mpv.nix
     ./programs/development.nix
+    ./programs/ssh.nix
   ];
 
   home.username = "wiqht";
