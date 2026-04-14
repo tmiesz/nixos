@@ -79,6 +79,7 @@
     xorg.libxcb
     nss
     xorg.libX11
+    xorg.libXi
     fontconfig
     freetype
     expat
