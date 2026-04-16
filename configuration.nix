@@ -65,37 +65,9 @@
   ];
 
   hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [
-    nvidia-vaapi-driver
-  ];
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # missing dynamic libraries here
-    libGL
-    xorg.libxcb
-    nss
-    xorg.libX11
-    xorg.libXi
-    fontconfig
-    freetype
-    expat
-    alsa-lib
-    libgbm
-    e2fsprogs
-    wayland
-    libxkbcommon
-    xcb-util-cursor
-    vulkan-loader
-  ];
-
-  environment.sessionVariables = {
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
-    QT_QPA_PLATFORM = "wayland";
-  };
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
