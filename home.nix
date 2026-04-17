@@ -12,6 +12,7 @@
     ./programs/mpv.nix
     # ./programs/development.nix
     ./programs/ssh.nix
+    ./programs/libreoffice.nix
   ];
 
   home.username = "wiqht";
