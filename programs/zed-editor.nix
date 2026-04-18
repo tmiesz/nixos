@@ -36,6 +36,7 @@
     };
 
     userKeymaps = [
+      ### NAVIGATION ###
       {
         bindings = {
           "ctrl-h" = "workspace::ActivatePaneLeft";
@@ -49,6 +50,20 @@
         bindings = {
           "tab" = "pane::ActivateNextItem";
           "shift-tab" = "pane::ActivatePreviousItem";
+        };
+      }
+
+      ### FILE EXPLORER ###
+      {
+        context = "ProjectPanel && not_editing";
+        bindings = {
+          "a" = "project_panel::NewFile";
+          "A" = "project_panel::NewDirectory";
+          "r" = "project_panel::Rename";
+          "d" = "project_panel::Delete";
+          "x" = "project_panel::Cut";
+          "c" = "project_panel::Copy";
+          "p" = "project_panel::Paste";
         };
       }
     ];
