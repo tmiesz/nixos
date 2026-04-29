@@ -3,12 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./core/pipewire.nix
-    ./core/steam.nix
-    ./core/auto-upgrade.nix
-    ./core/garbage-collection.nix
-    ./core/nvidia.nix
-    ./core/nvf.nix
+    ./modules/system/pipewire.nix
+    ./modules/system/steam.nix
+    ./modules/system/auto-upgrade.nix
+    ./modules/system/garbage-collection.nix
+    ./modules/system/nvidia.nix
+    ./modules/system/nvf.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
