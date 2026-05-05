@@ -8,7 +8,7 @@
     ./modules/system/auto-upgrade.nix
     ./modules/system/garbage-collection.nix
     ./modules/system/nvidia.nix
-    ./modules/system/nvf.nix
+    ./modules/system/nvf/nvf.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
