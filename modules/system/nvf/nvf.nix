@@ -11,8 +11,14 @@
       vim = {
         theme = {
           enable = true;
-          name = "gruvbox";
+          name = "oxocarbon";
           style = "dark";
+        };
+
+        clipboard = {
+          enable = true;
+          registers = "unnamedplus";
+          providers.xclip.enable = true;
         };
 
         telescope.enable = true;

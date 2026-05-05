@@ -1,12 +1,17 @@
 {
-  vim.languages = {
-    enableLSP = true;
-    enableFormat = true;
-    enableTreesitter = true;
+  vim = {
+    lsp = {
+      enable = true;
+      presets.tailwindcss-language-server.enable = true;
+    };
 
-    nix.enable = true;
-    ts.enable = true;
-    tailwind.enable = true;
-    csharp.enable = true;
+    languages = {
+      enableFormat = true;
+      enableTreesitter = true;
+      nix.enable = true;
+      typescript.enable = true;
+      csharp.enable = true;
+      json.enable = true;
+    };
   };
 }
