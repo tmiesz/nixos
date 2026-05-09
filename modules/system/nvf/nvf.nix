@@ -15,6 +15,12 @@
           style = "dark";
         };
 
+        opts = {
+          expandtab = true;
+          shiftwidth = 2;
+          tabstop = 2;
+        };
+
         clipboard = {
           enable = true;
           registers = "unnamedplus";
