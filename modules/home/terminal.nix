@@ -6,7 +6,7 @@
       enable = true;
       settings = {
         main = {
-          shell = "${pkgs.fish}/bin/fish";
+          shell = "${pkgs.zsh}/bin/zsh";
         };
       };
     };
@@ -14,12 +14,15 @@
     tmux = {
       enable = true;
       extraConfig = ''
-        set -g default-shell ${pkgs.fish}/bin/fish
+        set -g default-shell ${pkgs.zsh}/bin/zsh
       '';
     };
 
-    fish = {
+    zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
     };
   };
 }
