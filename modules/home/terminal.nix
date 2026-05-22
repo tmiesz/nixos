@@ -28,5 +28,15 @@
     starship = {
       enable = true;
     };
+
+    nix-your-shell = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }
