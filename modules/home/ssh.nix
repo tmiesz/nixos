@@ -3,19 +3,14 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
-      "*" = {
-
-      };
-
+    settings = {
       "github.com" = {
-        user = "git";
-        identityFile = "~/.ssh/id_github";
+        User = "git";
+        IdentityFile = "~/.ssh/id_github";
       };
-
       "codeberg.org" = {
-        user = "git";
-        identityFile = "~/.ssh/id_codeberg";
+        User = "git";
+        IdentityFile = "~/.ssh/id_codeberg";
       };
     };
   };
