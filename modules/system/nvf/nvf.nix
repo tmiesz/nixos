@@ -19,6 +19,8 @@
           expandtab = true;
           shiftwidth = 2;
           tabstop = 2;
+          autoindent = true;
+          smartindent = true;
         };
 
         clipboard = {
@@ -30,6 +32,7 @@
         telescope.enable = true;
         filetree.neo-tree.enable = true;
         autocomplete.blink-cmp.enable = true;
+        treesitter.indent.enable = false;
       };
     };
   };

@@ -20,7 +20,7 @@
 
   home.packages = with pkgs; [
     nixd
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   home.stateVersion = "25.11";
