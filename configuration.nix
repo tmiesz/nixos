@@ -8,7 +8,12 @@
     ./modules/system/auto-upgrade.nix
     ./modules/system/garbage-collection.nix
     ./modules/system/nvidia.nix
-    ./modules/system/nvf/nvf.nix
+    # ./modules/system/nvf/nvf.nix
+    ./modules/system/mnw.nix
+  ];
+
+  environment.systemPackages = [
+    pkgs.liquidctl
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -52,8 +57,8 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      kdePackages.kate
+    packages = [
+      pkgs.kdePackages.kate
     ];
   };
 

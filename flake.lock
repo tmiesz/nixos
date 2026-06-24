@@ -60,6 +60,21 @@
     },
     "mnw": {
       "locked": {
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
+    "mnw_2": {
+      "locked": {
         "lastModified": 1770419553,
         "narHash": "sha256-b1XqsH7AtVf2dXmq2iyRr2NC1yG7skY7Z6N2MpWHlK4=",
         "owner": "Gerg-L",
@@ -131,7 +146,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
-        "mnw": "mnw",
+        "mnw": "mnw_2",
         "ndg": "ndg",
         "nixpkgs": "nixpkgs_2",
         "systems": "systems"
@@ -153,6 +168,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mnw": "mnw",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf"
       }

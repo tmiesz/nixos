@@ -1,4 +1,5 @@
 {
+  # TODO: mnw or nvf?
   programs.nvf = {
     enable = true;
 

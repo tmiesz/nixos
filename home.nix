@@ -18,9 +18,9 @@
   home.username = "wiqht";
   home.homeDirectory = "/home/wiqht";
 
-  home.packages = with pkgs; [
-    nixd
-    nixfmt
+  home.packages = [
+    pkgs.nixd
+    pkgs.nixfmt
   ];
 
   home.stateVersion = "25.11";
