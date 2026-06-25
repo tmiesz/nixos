@@ -1,14 +1,23 @@
 {
-  description = "wiqht nix flake";
+  description = "wiqht os";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf";
-    mnw.url = "github:Gerg-L/mnw";
+
+    mnw = {
+      url = "github:Gerg-L/mnw";
+    };
+
+    # nvf = {
+    #   url = "github:notashelf/nvf";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # TODO: encryption
     # sops-nix = {
     #   url = "github:mic92/sops-nix";
@@ -21,7 +30,7 @@
     {
       nixpkgs,
       home-manager,
-      nvf,
+      # nvf,
       mnw,
       ...
     }:
@@ -38,7 +47,7 @@
             home-manager.users.wiqht = import ./home.nix;
           }
 
-          nvf.nixosModules.default
+          # nvf.nixosModules.default
 
           mnw.nixosModules.mnw
         ];
