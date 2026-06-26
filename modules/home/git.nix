@@ -56,7 +56,6 @@
         missingCommitsCheck = "warn";
       };
 
-      # --- COLORS ---------
       "color \"blame\"" = {
         highlightRecent = "black bold,1 year ago,white,1 month ago,default,7 days ago,blue";
       };

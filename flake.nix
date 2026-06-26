@@ -13,11 +13,6 @@
       url = "github:Gerg-L/mnw";
     };
 
-    # nvf = {
-    #   url = "github:notashelf/nvf";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     # TODO: encryption
     # sops-nix = {
     #   url = "github:mic92/sops-nix";
@@ -30,7 +25,6 @@
     {
       nixpkgs,
       home-manager,
-      # nvf,
       mnw,
       ...
     }:
@@ -46,8 +40,6 @@
 
             home-manager.users.wiqht = import ./home.nix;
           }
-
-          # nvf.nixosModules.default
 
           mnw.nixosModules.mnw
         ];

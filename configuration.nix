@@ -3,44 +3,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/system/pipewire.nix
-    ./modules/system/steam.nix
-    ./modules/system/auto-upgrade.nix
-    ./modules/system/garbage-collection.nix
-    ./modules/system/nvidia.nix
-    # ./modules/system/nvf/nvf.nix
-    ./modules/system/mnw.nix
+    ./modules/system/audio.nix
+    ./modules/system/graphics.nix
+    ./modules/system/programs.nix
+    ./modules/system/system.nix
   ];
-
-  environment.systemPackages = [
-    pkgs.liquidctl
-  ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Europe/Warsaw";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pl_PL.UTF-8";
-    LC_IDENTIFICATION = "pl_PL.UTF-8";
-    LC_MEASUREMENT = "pl_PL.UTF-8";
-    LC_MONETARY = "pl_PL.UTF-8";
-    LC_NAME = "pl_PL.UTF-8";
-    LC_NUMERIC = "pl_PL.UTF-8";
-    LC_PAPER = "pl_PL.UTF-8";
-    LC_TELEPHONE = "pl_PL.UTF-8";
-    LC_TIME = "pl_PL.UTF-8";
-  };
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {
     sddm.enable = true;
-    # autoLogin.enable = true;
-    # autoLogin.user = "wiqht";
   };
   services.desktopManager.plasma6.enable = true;
 
@@ -61,13 +32,6 @@
       pkgs.kdePackages.kate
     ];
   };
-
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   system.stateVersion = "25.11";
 }
