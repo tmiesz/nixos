@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
-  imports = builtins.filter (lib.hasSuffix ".nix") (lib.filesystem.listFilesRecursive ./modules/home);
+  imports = [ ./modules/home/default.nix ];
 
   home.username = "wiqht";
   home.homeDirectory = "/home/wiqht";
