@@ -9,9 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mnw = {
-      url = "github:Gerg-L/mnw";
-    };
+    mnw.url = "github:Gerg-L/mnw";
 
     # TODO: encryption
     # sops-nix = {
