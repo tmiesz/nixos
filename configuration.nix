@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./modules/system/audio.nix
-    ./modules/system/graphics.nix
-    ./modules/system/programs.nix
-    ./modules/system/system.nix
-  ];
+  imports =
+    builtins.filter (lib.hasSuffix ".nix") (lib.filesystem.listFilesRecursive ./modules/system)
+    ++ [ ./hardware-configuration.nix ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {

@@ -48,5 +48,7 @@
     pkgs.libreoffice
     pkgs.discord
     pkgs.liquidctl
+    pkgs.nixd
+    pkgs.nixfmt
   ];
 }
