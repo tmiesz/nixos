@@ -21,7 +21,6 @@
   home.packages = [
     pkgs.spotify
     pkgs.netflix
-    pkgs.libreoffice
     pkgs.discord
     pkgs.liquidctl
     pkgs.nixd

@@ -1,6 +1,7 @@
 {
 
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 14;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
@@ -16,15 +17,11 @@
     dates = "weekly";
   };
 
-  boot.loader.systemd-boot.configurationLimit = 14;
-
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
-
-  nix.settings.auto-optimise-store = true;
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -42,6 +39,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nix.settings.auto-optimise-store = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
