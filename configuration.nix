@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   ...
 }:
 
@@ -21,15 +20,14 @@
     variant = "";
   };
 
+  services.hardware.openrgb.enable = true;
+
   users.users.wiqht = {
     isNormalUser = true;
     description = "wiqht";
     extraGroups = [
       "networkmanager"
       "wheel"
-    ];
-    packages = [
-      pkgs.kdePackages.kate
     ];
   };
 
