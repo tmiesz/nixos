@@ -16,6 +16,7 @@
     starship.enable = true;
     nix-your-shell.enable = true;
     zoxide.enable = true;
+    neovim.enable = true;
   };
 
   home.packages = [
@@ -25,5 +26,6 @@
     pkgs.liquidctl
     pkgs.nixd
     pkgs.nixfmt
+    pkgs.jujutsu
   ];
 }

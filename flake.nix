@@ -9,21 +9,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mnw.url = "github:Gerg-L/mnw";
-
     # TODO: encryption
     # sops-nix = {
     #   url = "github:mic92/sops-nix";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    # OR AGENIX !!
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
-      mnw,
       ...
     }:
     {
@@ -38,8 +34,6 @@
 
             home-manager.users.wiqht = import ./home.nix;
           }
-
-          mnw.nixosModules.mnw
         ];
       };
     };
