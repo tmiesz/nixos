@@ -27,5 +27,6 @@
     pkgs.nixd
     pkgs.nixfmt
     pkgs.jujutsu
+    pkgs.lua-language-server
   ];
 }

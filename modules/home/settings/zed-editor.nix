@@ -4,6 +4,7 @@
       "html"
       "nix"
       "csharp"
+      "lua"
       "ultraviolet-theme"
       "charmed-icons"
     ];
@@ -22,14 +23,14 @@
           milliseconds = 1000;
         };
       };
-      lsp.nix = {
-        binary = {
-          path_lookup = true;
-        };
-      };
+
+      lsp.nix.binary.path_lookup = true;
+      lsp.lua-language-server.settings.Lua.diagnostics.globals = [ "vim" ];
+
       languages.Nix.language_servers = [
         "nixd"
         "!nil"
+        "lua-language-server"
       ];
     };
 
