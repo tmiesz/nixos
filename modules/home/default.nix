@@ -19,14 +19,14 @@
     neovim.enable = true;
   };
 
-  home.packages = [
-    pkgs.spotify
-    pkgs.netflix
-    pkgs.discord
-    pkgs.liquidctl
-    pkgs.nixd
-    pkgs.nixfmt
-    pkgs.jujutsu
-    pkgs.lua-language-server
+  home.packages = with pkgs; [
+    spotify
+    netflix
+    discord
+    liquidctl
+    nixd
+    nixfmt
+    jujutsu
+    lua-language-server
   ];
 }
