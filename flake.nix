@@ -1,11 +1,16 @@
 {
-  description = "wiqht os";
+  description = "wiqht nixos";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    doom-emacs = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,6 +25,7 @@
     {
       nixpkgs,
       home-manager,
+      doom-emacs,
       ...
     }:
     {
@@ -31,8 +37,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            home-manager.users.wiqht = import ./home.nix;
+            home-manager.users.wiqht = {
+              imports = [
+                doom-emacs.homeModule
+                ./home.nix
+              ];
+            };
           }
         ];
       };

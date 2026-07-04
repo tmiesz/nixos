@@ -17,6 +17,7 @@
     nix-your-shell.enable = true;
     zoxide.enable = true;
     neovim.enable = true;
+    doom-emacs.enable = true;
   };
 
   home.packages = with pkgs; [
