@@ -7,9 +7,10 @@
        modeline
        nav-flash
        ophints
-       treemacs
+       treemacs ; file explorer
        window-select
        (popup +defaults)
+       (vc-gutter +pretty) ; version control diff in the fringe
 
        :editor
        evil
@@ -21,8 +22,11 @@
        eshell
        vterm
 
+       :checkers
+       syntax
+       (spell +flyspell)
+
        :os
-       (:if (featurep :system 'macos) macos)
        (tty +osc)
 
        :lang
