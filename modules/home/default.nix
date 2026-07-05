@@ -11,7 +11,6 @@
     git.enable = true;
     zed-editor.enable = true;
     foot.enable = true;
-    tmux.enable = true;
     zsh.enable = true;
     starship.enable = true;
     nix-your-shell.enable = true;
