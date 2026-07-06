@@ -14,6 +14,7 @@
 
        :editor
        evil
+       (format +onsave)
 
        :emacs
        undo
@@ -31,7 +32,7 @@
 
        :lang
        emacs-lisp
-       csharp
+       (csharp +lsp)
        (nix +lsp)
 
        :tools
