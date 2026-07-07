@@ -5,6 +5,7 @@
       "nix"
       "csharp"
       "lua"
+      "ellsp"
       "ultraviolet-theme"
       "charmed-icons"
     ];
