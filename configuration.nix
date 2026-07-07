@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   ...
 }:
@@ -25,6 +26,7 @@
   users.users.wiqht = {
     isNormalUser = true;
     description = "wiqht";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
