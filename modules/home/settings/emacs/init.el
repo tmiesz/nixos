@@ -14,6 +14,7 @@
 
        :editor
        evil
+       fold
        (format +onsave)
 
        :emacs
@@ -37,7 +38,8 @@
 
        :tools
        magit
-       (lsp +eglot)
+       lookup
+       lsp
 
        :config
        (default +bindings +smartparens))
