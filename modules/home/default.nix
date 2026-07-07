@@ -28,5 +28,6 @@
     nixfmt
     jujutsu
     lua-language-server
+    hunspell
   ];
 }
