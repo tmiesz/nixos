@@ -23,11 +23,16 @@
     spotify
     netflix
     discord
-    liquidctl
-    nixd
-    nixfmt
-    jujutsu
+    liquidctl # rgb control
+
+    # development
+    nixd # nix language server
+    nixfmt # nix code formatter
     lua-language-server
-    hunspell
+    jujutsu # source control
+    godot
+
+    dotnet-sdk
+    roslyn-ls # csharp language server
   ];
 }
