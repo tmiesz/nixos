@@ -1,0 +1,53 @@
+#+title: Config
+
+* Table of Contents :toc:
+- [[#general-settings][General Settings]]
+- [[#doom-settings][Doom Settings]]
+- [[#org-settings][Org Settings]]
+
+* General Settings
+#+begin_src emacs-lisp
+
+(setq user-full-name "Tomasz Mieszkowicz"
+      user-mail-address "tommieszkowicz@gmail.com")
+
+(setq display-line-numbers-type 'relative)
+
+;; TODO: how about we don't hardcode it? maybe set sessionVariable in nix config?
+(setq doom-private-dir "/etc/nixos/modules/home/settings/emacs/")
+
+(setq confirm-kill-emacs nil)
+
+#+end_src
+
+* Doom Settings
+#+begin_src emacs-lisp
+
+(setq doom-theme 'doom-one)
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16))
+
+#+end_src
+
+* Org Settings
+#+begin_src emacs-lisp
+
+(custom-theme-set-faces!
+  'doom-one
+  '(org-level8 :inherit outline-3 :height 1.0)
+  '(org-level7 :inherit outline-3 :height 1.0)
+  '(org-level6 :inherit outline-3 :height 1.1)
+  '(org-level5 :inherit outline-3 :height 1.2)
+  '(org-level4 :inherit outline-3 :height 1.3)
+  '(org-level3 :inherit outline-3 :height 1.4)
+  '(org-level2 :inherit outline-2 :height 1.5)
+  '(org-level1 :inherit outline-1 :height 1.6)
+  '(org-document-title :height 1.0 :bold t :underline nil))
+
+(setq org-directory "~/org/")
+
+;; TODO: test this later, might need org-modern package??
+;; this should prettify the tables with some spacing and bold lines
+;; (setq org-modern-table t)
+;; (setq org-modern-table-vertical 1)
+
+#+end_src
