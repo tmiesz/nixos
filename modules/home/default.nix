@@ -17,12 +17,13 @@
     zoxide.enable = true;
     neovim.enable = true;
     doom-emacs.enable = true;
+    vesktop.enable = true;
+    # discord.enable = true;
   };
 
   home.packages = with pkgs; [
     spotify
     netflix
-    # discord
     liquidctl # rgb control
 
     # development
