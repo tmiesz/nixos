@@ -22,7 +22,7 @@
   home.packages = with pkgs; [
     spotify
     netflix
-    discord
+    # discord
     liquidctl # rgb control
 
     # development
