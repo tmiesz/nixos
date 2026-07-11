@@ -17,8 +17,7 @@
     zoxide.enable = true;
     neovim.enable = true;
     doom-emacs.enable = true;
-    vesktop.enable = true;
-    # discord.enable = true;
+    discord.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -35,5 +34,6 @@
 
     dotnet-sdk
     roslyn-ls # csharp language server
+    netcoredbg # csharp debugger
   ];
 }
