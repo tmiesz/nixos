@@ -1,10 +1,24 @@
 #+title: Config
 
 * Table of Contents :toc:
+- [[#keybindings][Keybindings]]
 - [[#general-settings][General Settings]]
 - [[#doom-settings][Doom Settings]]
 - [[#org-settings][Org Settings]]
+  - [[#general][General]]
+  - [[#headers][Headers]]
+  - [[#toggle-markdown-view][Toggle Markdown View]]
+- [[#markdown][Markdown]]
 
+* Keybindings
+#+begin_src emacs-lisp
+
+(map! :leader
+      (:prefix ("t" . "toggle")
+       :desc "Toggle markdown-view-mode"        "m" #'w/toggle-markdown-view-mode
+       :desc "Toggle truncate lines"            "t" #'toggle-truncate-lines))
+
+#+end_src
 * General Settings
 #+begin_src emacs-lisp
 
@@ -19,7 +33,6 @@
 (setq confirm-kill-emacs nil)
 
 #+end_src
-
 * Doom Settings
 #+begin_src emacs-lisp
 
@@ -27,27 +40,50 @@
 (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16))
 
 #+end_src
-
 * Org Settings
+** General
+#+begin_src emacs-lisp
+
+(setq org-directory "~/org/")
+
+#+end_src
+** Headers
 #+begin_src emacs-lisp
 
 (custom-theme-set-faces!
   'doom-one
-  '(org-level8 :inherit outline-3 :height 1.0)
-  '(org-level7 :inherit outline-3 :height 1.0)
-  '(org-level6 :inherit outline-3 :height 1.1)
-  '(org-level5 :inherit outline-3 :height 1.2)
-  '(org-level4 :inherit outline-3 :height 1.3)
-  '(org-level3 :inherit outline-3 :height 1.4)
-  '(org-level2 :inherit outline-2 :height 1.5)
-  '(org-level1 :inherit outline-1 :height 1.6)
-  '(org-document-title :height 1.0 :bold t :underline nil))
+  '(org-level-1 :inherit outline-1 :height 1.6)
+  '(org-level-2 :inherit outline-2 :height 1.5)
+  '(org-level-3 :inherit outline-3 :height 1.4)
+  '(org-level-4 :inherit outline-3 :height 1.3)
+  '(org-level-5 :inherit outline-3 :height 1.2)
+  '(org-level-6 :inherit outline-3 :height 1.1)
+  '(org-level-7 :inherit outline-3 :height 1.0)
+  '(org-level-8 :inherit outline-3 :height 1.0)
+  '(org-document-title :height 1.8 :bold t :underline nil))
 
-(setq org-directory "~/org/")
+#+end_src
+** Toggle Markdown View
+#+begin_src emacs-lisp
 
-;; TODO: test this later, might need org-modern package??
-;; this should prettify the tables with some spacing and bold lines
-;; (setq org-modern-table t)
-;; (setq org-modern-table-vertical 1)
+(defun w/toggle-markdown-view-mode ()
+  "Toggle between 'markdown-view' and 'markdown-view-mode'."
+  (interactive)
+  (if (eq major-mode 'markdown-view-mode)
+      (markdown-mode)
+    (markdown-view-mode))
+
+#+end_src
+* Markdown
+#+begin_src emacs-lisp
+
+(custom-set-faces
+ '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.6))))
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.5))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.4))))
+ '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.3))))
+ '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.2))))
+ '(markdown-header-face-6 ((t (:inherit markdown-header-face :height 1.1)))))
 
 #+end_src
