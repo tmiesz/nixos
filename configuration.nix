@@ -21,10 +21,16 @@
   # -------------------------------------------------
 
   programs.niri.enable = true;
+  programs.niri.useNautilus = true;
+
   services.displayManager = {
     sddm.enable = true;
     defaultSession = "niri";
   };
+
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite # xwayland support
+  ];
 
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
