@@ -9,12 +9,6 @@
     builtins.filter (lib.hasSuffix ".nix") (lib.filesystem.listFilesRecursive ./modules/system)
     ++ [ ./hardware-configuration.nix ];
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager = {
-    sddm.enable = true;
-  };
-  services.desktopManager.plasma6.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -22,6 +16,22 @@
   };
 
   services.hardware.openrgb.enable = true;
+
+  # niri noctalia placeholders
+  # -------------------------------------------------
+
+  programs.niri.enable = true;
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "niri";
+  };
+
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
+  # -------------------------------------------------
 
   users.users.wiqht = {
     isNormalUser = true;
