@@ -17,6 +17,17 @@
           builtin = "Catppuccin";
         };
 
+        bar = {
+          main = {
+            enabled = true;
+
+            monitor."DP-4" = {
+              match = "DP-4";
+              enabled = false;
+            };
+          };
+        };
+
         wallpaper = {
           enabled = true;
           default.path = ./assets/wallpapers/pinkish-girl.png;
