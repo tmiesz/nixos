@@ -33,6 +33,7 @@
     godot
 
     dotnet-sdk
+    roslyn
     roslyn-ls # csharp language server
     netcoredbg # csharp debugger
   ];
