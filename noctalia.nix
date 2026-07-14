@@ -21,17 +21,54 @@
           main = {
             enabled = true;
 
-            monitor."DP-4" = {
+            monitor."main" = {
               match = "DP-4";
-              enabled = false;
+              enabled = true;
+              auto_hide = true;
+              reserve_space = false;
+            };
+
+            monitor."secondary" = {
+              match = "DP-6";
+              enabled = true;
+              auto_hide = false;
             };
           };
         };
 
         wallpaper = {
           enabled = true;
-          default.path = ./assets/wallpapers/pinkish-girl.png;
+          fill_mode = "crop";
+          per_monitor_directories = true;
+          monitor."DP-4" = {
+            enabled = true;
+            directory = ./assets/wallpapers/main;
+          };
+          monitor."DP-6" = {
+            enabled = true;
+            directory = ./assets/wallpapers/secondary;
+          };
         };
+
+        lockscreen = {
+          enabled = true;
+        };
+
+        idle = {
+          behavior = {
+            screen_off = {
+              enabled = true;
+              action = "screen_off";
+              timeout = 300;
+            };
+            lock = {
+              enabled = true;
+              action = "lock";
+              timeout = 900;
+            };
+          };
+        };
+
       };
     };
   };
