@@ -1,0 +1,8 @@
+* Layer:01 - General
+This repository contains my personal NixOS Niri Noctalia system configuration.
+Managed with flakes and home-manager.
+
+* Layer:02 - Resources
+  - [[https://nixos-and-flakes.thiscute.world][NixOS & Flakes Book]]
+  - [[https://filip-ruman.pages.dev/nixos_config/overview][Nixos Configuration]]
+  - [[https://ekala-project.github.io/nix-book][The Nix Package Manager]]

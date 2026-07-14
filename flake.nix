@@ -1,5 +1,5 @@
 {
-  description = "wiqht nixos";
+  description = "wiqht nixos niri noctalia";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
