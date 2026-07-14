@@ -33,6 +33,17 @@
 
 (setq confirm-kill-emacs nil)
 
+;; roslyn tests
+(with-eval-after-load 'lsp-mode
+  (advice-add 'lsp--client-capabilities :filter-return
+    (lambda (caps)
+      (let* ((text-document (alist-get 'textDocument caps))
+             (diagnostic '((dynamicRegistration . t)
+                           (relatedDocumentSupport . t))))
+        (setf (alist-get 'diagnostic text-document) diagnostic)
+        (setf (alist-get 'textDocument caps) text-document))
+      caps)))
+
 #+end_src
 * Doom Settings
 #+begin_src emacs-lisp
