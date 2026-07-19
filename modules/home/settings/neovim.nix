@@ -15,6 +15,7 @@
 
     plugins = with pkgs.vimPlugins; [
       lazygit-nvim
+      roslyn-nvim
     ];
   };
 
