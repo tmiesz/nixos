@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   xdg.configFile."niri/config.kdl".text = ''
     output "DP-6" {
@@ -25,12 +23,23 @@
       }
     }
 
+    gestures {
+      hot-corners {
+        // off
+        // top-left
+        top-right
+        // bottom-left
+        // bottom-right
+       }
+    }
+
     spawn-at-startup "spotify"
     spawn-at-startup "discord"
 
     binds {
       // Apps
       Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+      Mod+E { spawn "nautilus"; }
       Mod+Return { spawn "foot"; }
 
       // Windows
