@@ -24,6 +24,8 @@
     spotify
     netflix
     liquidctl # rgb control
+    nautilus
+    protontricks
 
     # development
     nixd # nix language server
