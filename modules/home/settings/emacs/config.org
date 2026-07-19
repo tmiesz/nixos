@@ -7,7 +7,6 @@
 - [[#org-settings][Org Settings]]
   - [[#general][General]]
   - [[#headers][Headers]]
-  - [[#toggle-markdown-view][Toggle Markdown View]]
 - [[#markdown][Markdown]]
   - [[#headers-1][Headers]]
 
@@ -33,23 +32,27 @@
 
 (setq confirm-kill-emacs nil)
 
-;; roslyn tests
-(with-eval-after-load 'lsp-mode
-  (advice-add 'lsp--client-capabilities :filter-return
-    (lambda (caps)
-      (let* ((text-document (alist-get 'textDocument caps))
-             (diagnostic '((dynamicRegistration . t)
-                           (relatedDocumentSupport . t))))
-        (setf (alist-get 'diagnostic text-document) diagnostic)
-        (setf (alist-get 'textDocument caps) text-document))
-      caps)))
+;; roslyn workaround
+;; this enables some of the lsp functionally but not everything
+;; also the performance is streight up bad
+;; basically no emacs for dotnet for now
+;;
+;; (with-eval-after-load 'lsp-mode
+;;   (advice-add 'lsp--client-capabilities :filter-return
+;;     (lambda (caps)
+;;       (let* ((text-document (alist-get 'textDocument caps))
+;;              (diagnostic '((dynamicRegistration . t)
+;;                            (relatedDocumentSupport . t))))
+;;         (setf (alist-get 'diagnostic text-document) diagnostic)
+;;         (setf (alist-get 'textDocument caps) text-document))
+;;       caps)))
 
 #+end_src
 * Doom Settings
 #+begin_src emacs-lisp
 
 (setq doom-theme 'doom-one)
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 18))
 
 #+end_src
 * Org Settings
@@ -73,17 +76,6 @@
   '(org-level-7 :inherit outline-3 :height 1.0)
   '(org-level-8 :inherit outline-3 :height 1.0)
   '(org-document-title :height 1.8 :bold t :underline nil))
-
-#+end_src
-** Toggle Markdown View
-#+begin_src emacs-lisp
-
-(defun w/toggle-markdown-view-mode ()
-  "Toggle between 'markdown-view' and 'markdown-view-mode'."
-  (interactive)
-  (if (eq major-mode 'markdown-view-mode)
-      (markdown-mode)
-    (markdown-view-mode)))
 
 #+end_src
 * Markdown
