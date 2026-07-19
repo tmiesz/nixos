@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.zed-editor = {
     extensions = [
@@ -27,6 +28,14 @@
 
       lsp.nix.binary.path_lookup = true;
       lsp.lua-language-server.settings.Lua.diagnostics.globals = [ "vim" ];
+      lsp.roslyn.binary = {
+        path = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
+        arguments = [
+          "--stdio"
+          "--autoLoadProjects"
+          "--logLevel=Information"
+        ];
+      };
 
       languages.Nix.language_servers = [
         "nixd"
