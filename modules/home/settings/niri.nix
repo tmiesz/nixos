@@ -55,6 +55,9 @@
       Mod+L { focus-column-or-monitor-right; }
       Mod+K { focus-window-up; }
       Mod+J { focus-window-down; }
+      Print { screenshot; }
+      Ctrl+Print { screenshot-screen; }
+      Alt+Print { screenshot-window; }
 
       Pause { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     }

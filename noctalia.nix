@@ -59,12 +59,12 @@
             screen_off = {
               enabled = true;
               action = "screen_off";
-              timeout = 300;
+              timeout = 600;
             };
             lock = {
               enabled = true;
               action = "lock";
-              timeout = 900;
+              timeout = 1500;
             };
           };
         };
