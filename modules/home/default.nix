@@ -30,13 +30,8 @@
     # development
     nixd # nix language server
     nixfmt # nix code formatter
-    lua-language-server
-    jujutsu # source control
     godot
 
     dotnet-sdk
-    roslyn
-    roslyn-ls # csharp language server
-    netcoredbg # csharp debugger
   ];
 }

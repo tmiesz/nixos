@@ -10,12 +10,20 @@
     withPython3 = false;
 
     extraPackages = with pkgs; [
-      lazygit
+      # General
+
+      # Lua
+      lua-language-server
+
+      # Csharp
+      roslyn-ls
+      netcoredbg
     ];
 
     plugins = with pkgs.vimPlugins; [
-      lazygit-nvim
+      which-key-nvim
       roslyn-nvim
+      neogit
     ];
   };
 
