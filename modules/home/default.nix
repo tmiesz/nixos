@@ -23,15 +23,9 @@
   home.packages = with pkgs; [
     spotify
     netflix
-    liquidctl # rgb control
+    liquidctl
     nautilus
     protontricks
-
-    # development
-    nixd # nix language server
-    nixfmt # nix code formatter
     godot
-
-    dotnet-sdk
   ];
 }

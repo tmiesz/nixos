@@ -11,8 +11,8 @@ vim.opt.wrap = false -- do not wrap lines
 vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 10 -- keep 10 lines above/below cursor
 
-vim.opt.tabstop = 2 -- tab width
-vim.opt.shiftwidth = 2 -- indent width
+vim.opt.tabstop = 4 -- tab width
+vim.opt.shiftwidth = 4 -- indent width
 vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.smartindent = true -- smart auto indent
 vim.opt.autoindent = true -- copy indent from current line
@@ -68,3 +68,18 @@ vim.opt.wildmode = "longest:full,full" -- complete longest common match, full co
 vim.opt.diffopt:append("linematch:60") -- improve diff display
 vim.opt.redrawtime = 10000 -- increase neovim redraw tolerance
 vim.opt.maxmempattern = 20000 -- increase max memory
+
+require("nvim-tree").setup({
+    view = {
+        width = 35,
+    },
+    filters = {
+        dotfiles = false,
+    },
+    renderer = {
+        group_empty = true,
+    },
+})
+vim.keymap.set("n", "<leader>e", function()
+    require("nvim-tree.api").tree.toggle()
+end, { desc = "Toggle NvimTree"})

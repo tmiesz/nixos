@@ -15,6 +15,10 @@
       # Lua
       lua-language-server
 
+      # Nix
+      nixd
+      nixfmt
+
       # Csharp
       roslyn-ls
       netcoredbg
@@ -24,6 +28,7 @@
       which-key-nvim
       roslyn-nvim
       neogit
+      nvim-tree-lua
     ];
   };
 
