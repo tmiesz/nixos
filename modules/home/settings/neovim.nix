@@ -29,6 +29,9 @@
       roslyn-nvim
       neogit
       nvim-tree-lua
+      fzf-lua
+      gitsigns-nvim
+      nvim-autopairs
     ];
   };
 

@@ -27,8 +27,8 @@ vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizonta
 
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down"})
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up"})
