@@ -132,3 +132,23 @@ vim.keymap.set("n", "<leader>hd", function()
 end, { desc = "Diff this" })
 
 require('nvim-autopairs').setup({})
+
+-- require('mason').setup({})
+--
+vim.keymap.set("n", "<leader>td", function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle diagnostics" })
+
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } },
+    },
+  },
+})
+
+vim.lsp.enable({ "nixd", "lua_ls" })
+
+vim.diagnostic.config({ virtual_text = true })
+
+-- require('nvim-treesitter').setup({})

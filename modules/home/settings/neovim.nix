@@ -32,6 +32,9 @@
       fzf-lua
       gitsigns-nvim
       nvim-autopairs
+      nvim-lspconfig
+      # mason-nvim
+      # nvim-treesitter
     ];
   };
 
