@@ -23,7 +23,7 @@
 
             monitor."main" = {
               match = "DP-4";
-              enabled = true;
+              enabled = false;
               auto_hide = true;
               reserve_space = false;
             };
@@ -32,6 +32,10 @@
               match = "DP-6";
               enabled = true;
               auto_hide = false;
+              margin_ends = 15;
+              start = ["media"];
+              center = ["clock"];
+              end = ["tray" "notifications" "clipboard" "volume" "control-center" "session"];
             };
           };
         };
