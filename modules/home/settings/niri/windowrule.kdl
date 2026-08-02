@@ -1,0 +1,17 @@
+window-rule {
+    open-maximized true
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="spotify"
+    open-on-output "DP-6"
+    open-maximized false
+}
+
+window-rule {
+    match app-id="discord"
+    open-on-output "DP-6"
+    open-maximized false
+}
