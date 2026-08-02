@@ -1,8 +1,10 @@
 require("keybinds")
+require("plugins.floaterminal")
 
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("habamax")
 
+vim.opt.shell = "zsh"
 
 vim.opt.number = true -- line number
 vim.opt.relativenumber = true -- relative line numbers
@@ -152,3 +154,17 @@ vim.lsp.enable({ "nixd", "lua_ls" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- require('nvim-treesitter').setup({})
+
+require("mini.completion").setup({
+    lsp_completion = {
+        auto_setup = true,
+    }
+})
+
+local MiniSnippets = require("mini.snippets")
+MiniSnippets.setup({
+    snippets = {
+        MiniSnippets.gen_loader.from_lang(), -- loads friendly-snippets
+    },
+})
+MiniSnippets.start_lsp_server({ match = false })

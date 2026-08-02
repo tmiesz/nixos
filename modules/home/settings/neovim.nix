@@ -33,6 +33,10 @@
       gitsigns-nvim
       nvim-autopairs
       nvim-lspconfig
+
+      mini-completion
+      mini-snippets
+
       # mason-nvim
       # nvim-treesitter
     ];
