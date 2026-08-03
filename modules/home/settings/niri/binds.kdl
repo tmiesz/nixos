@@ -5,6 +5,7 @@ binds {
     // Apps
     Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+E { spawn "nautilus"; }
+    Mod+B { spawn "librewolf"; }
     Mod+Return { spawn "foot"; }
 
     // Windows

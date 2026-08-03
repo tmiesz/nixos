@@ -1,7 +1,8 @@
 window-rule {
     open-maximized true
-    geometry-corner-radius 4
+    geometry-corner-radius 10
     clip-to-geometry true
+    opacity 0.90
 }
 
 window-rule {
