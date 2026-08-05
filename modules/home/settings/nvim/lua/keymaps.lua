@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true}
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -12,11 +14,8 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" }
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format buffer" })
 
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
-
-vim.keymap.set("x", "<leader>p", "_dP", { desc = "Paste without yanking" })
-vim.keymap.set({"n", "v" }, "<Leader>x", "_d", { desc = "Delete without yanking" })
+vim.keymap.set("x", "p", [["_dP]], { desc = "Paste without yanking" })
+vim.keymap.set({ "n", "v" }, "<leader>x", "_d", { desc = "Delete without yanking" })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
@@ -31,7 +30,24 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window heig
 vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down"})
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up"})
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move section down"})
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move section up"})
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move section down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move section up" })
+
+vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up in buffer with cursor centered" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down in buffer with cursor centered" })
+
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result with cursor centered" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result with cursor centered" })
+
+vim.keymap.set("n", "<leader>ra", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word cursor is on globally" })
+
+-- undo tree
+vim.keymap.set("n", "<leader>u", function()
+    vim.cmd.packadd("nvim.undotree")
+    require("undotree").open()
+end, { desc = "Toggle Builtin Undotree" })
