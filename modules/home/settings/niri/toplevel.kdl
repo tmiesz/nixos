@@ -1,3 +1,4 @@
+spawn-at-startup "noctalia"
 spawn-at-startup "spotify"
 spawn-at-startup "discord"
 

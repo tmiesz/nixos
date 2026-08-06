@@ -2,17 +2,28 @@ window-rule {
     open-maximized true
     geometry-corner-radius 10
     clip-to-geometry true
-    opacity 0.90
 }
 
 window-rule {
     match app-id="spotify"
-    open-on-output "DP-6"
+
+    open-on-workspace "1"
     open-maximized false
+
+    // opacity 0.80
 }
 
 window-rule {
     match app-id="discord"
-    open-on-output "DP-6"
+
+    open-on-workspace "1"
     open-maximized false
+}
+
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
 }

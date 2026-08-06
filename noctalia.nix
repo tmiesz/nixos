@@ -17,6 +17,7 @@
           builtin = "Catppuccin";
         };
 
+
         bar = {
           main = {
             enabled = true;
@@ -33,30 +34,86 @@
               enabled = true;
               auto_hide = false;
               margin_ends = 15;
-              start = ["media"];
-              center = ["clock"];
-              end = ["tray" "notifications" "clipboard" "volume" "control-center" "session"];
+              start = [ "media" ];
+              center = [ "clock" ];
+              end = [
+                "tray"
+                "notifications"
+                "clipboard"
+                "volume"
+                "control-center"
+                "session"
+              ];
             };
           };
         };
 
+        # Wallpaper related settings
         wallpaper = {
           enabled = true;
+
           fill_mode = "crop";
+          fill_color = "#111111";
+
+          transition = [
+            "fade"
+            "wipe"
+            "disc"
+            "stripes"
+            "zoom"
+            "honeycomb"
+          ];
+
+          transition_duration = 1500;
+          edge_smoothness = 0.3;
+          transition_on_startup = false;
+
+          directory = ./assets/wallpapers/main;
+          directory_light = ./assets/wallpapers/main;
+          directory_dark = ./assets/wallpapers/main;
+
           per_monitor_directories = true;
-          monitor."DP-4" = {
-            enabled = true;
-            directory = ./assets/wallpapers/main;
+
+          animations = {
+            enabled = false;
+            interval_seconds = 1800;
+            order = "random";
+            recursive = true;
           };
-          monitor."DP-6" = {
-            enabled = true;
-            directory = ./assets/wallpapers/secondary;
+
+          monitor = {
+            "DP-4" = {
+              enabled = true;
+              fill_color = "#111111";
+
+              directory = ./assets/wallpapers/main;
+              directory_light = ./assets/wallpapers/main;
+              directory_dark = ./assets/wallpapers/main;
+            };
+
+            "DP-6" = {
+              enabled = true;
+              fill_color = "#111111";
+
+              directory = ./assets/wallpapers/secondary;
+              directory_light = ./assets/wallpapers/secondary;
+              directory_dark = ./assets/wallpapers/secondary;
+            };
           };
         };
+
+        # Backdrop for overview
+        backdrop = {
+            enabled = true;
+            blur_intensity = 0.5;
+            tint_intensity = 0.3;
+        };
+
 
         lockscreen = {
           enabled = true;
         };
+
 
         idle = {
           behavior = {

@@ -1,9 +1,10 @@
 binds {
 
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Slash { show-hotkey-overlay; }
+    Mod+Space repeat=false { toggle-overview; }
 
     // Apps
-    Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+E { spawn "nautilus"; }
     Mod+B { spawn "librewolf"; }
     Mod+Return { spawn "foot"; }
