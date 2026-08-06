@@ -17,7 +17,7 @@
       };
 
       commit = {
-        template =  toString ./git/gittemplate;
+        template =  "${./git/gittemplate}";
       };
  
       status = {
