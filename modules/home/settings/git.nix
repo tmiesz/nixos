@@ -16,6 +16,10 @@
         defaultBranch = "main";
       };
 
+      commit = {
+        template =  toString ./git/gittemplate;
+      };
+ 
       status = {
         short = true;
         branch = true;
