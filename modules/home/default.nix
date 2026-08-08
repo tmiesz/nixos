@@ -14,7 +14,6 @@
     zsh.enable = true;
     starship.enable = true;
     nix-your-shell.enable = true;
-    zoxide.enable = true;
     neovim.enable = true;
     doom-emacs.enable = true;
     discord.enable = true;
