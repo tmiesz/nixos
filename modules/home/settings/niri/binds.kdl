@@ -13,7 +13,6 @@ binds {
     Mod+Q { close-window; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+M { maximize-window-to-edges; }
 
     // Focus
     Mod+H { focus-column-or-monitor-left; }

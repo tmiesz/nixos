@@ -7,7 +7,7 @@ window-rule {
 window-rule {
     match app-id="spotify"
 
-    open-on-workspace "1"
+    open-on-output "DP-6"
     open-maximized false
 
     // opacity 0.80
@@ -16,7 +16,7 @@ window-rule {
 window-rule {
     match app-id="discord"
 
-    open-on-workspace "1"
+    open-on-output "DP-6"
     open-maximized false
 }
 

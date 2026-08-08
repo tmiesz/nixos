@@ -1,15 +1,16 @@
 spawn-at-startup "noctalia"
 spawn-at-startup "spotify"
 spawn-at-startup "discord"
+// spawn-at-startup "xwayland-satellite"
 
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-environment {
-    QT_QPA_PLATFORM "wayland"
-    DISPLAY null
-}
+// environment {
+//     QT_QPA_PLATFORM "wayland"
+//     DISPLAY null
+// }
 
 cursor {
     // xcursor-theme "breeze_cursors"
@@ -32,10 +33,10 @@ overview {
     }
 }
 
-xwayland-satellite {
-    // off
-    path "xwayland-satellite"
-}
+// xwayland-satellite {
+//     // off
+//     path "xwayland-satellite"
+// }
 
 clipboard {
     disable-primary
