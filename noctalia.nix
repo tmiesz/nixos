@@ -17,7 +17,6 @@
           builtin = "Catppuccin";
         };
 
-
         bar = {
           main = {
             enabled = true;
@@ -104,16 +103,20 @@
 
         # Backdrop for overview
         backdrop = {
-            enabled = true;
-            blur_intensity = 0.5;
-            tint_intensity = 0.3;
+          enabled = true;
+          blur_intensity = 0.5;
+          tint_intensity = 0.3;
         };
 
+        osd = {
+          kinds = {
+            media = false;
+          };
+        };
 
         lockscreen = {
           enabled = true;
         };
-
 
         idle = {
           behavior = {
