@@ -37,6 +37,10 @@
       mini-completion
       mini-snippets
 
+      # Debugger
+      nvim-dap
+      nvim-dap-ui
+
       # mason-nvim
       # nvim-treesitter
     ];
