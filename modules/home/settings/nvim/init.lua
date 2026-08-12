@@ -3,7 +3,7 @@ require("keymaps")
 
 require("plugins.dap")
 require("plugins.floaterminal")
-require("plugins.fzf-lua")
+require("plugins.fzf")
 require("plugins.gitsigns")
 require("plugins.mini-completion")
 require("plugins.mini-snippets")
