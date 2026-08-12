@@ -22,7 +22,6 @@ vim.opt.hlsearch = true                              -- highlight search matches
 vim.opt.incsearch = true                             -- show matches as you type
 
 vim.opt.signcolumn = "yes"                           -- always show a sign column
--- vim.opt.colorcolumn = "100"                          -- show a columnt at n position chars
 vim.opt.showmatch = false                            -- highlight matching brackets
 vim.opt.cmdheight = 1                                -- single line commend line
 vim.opt.completeopt = "menuone,noinsert,noselect"    -- completion options
