@@ -67,9 +67,9 @@
           edge_smoothness = 0.3;
           transition_on_startup = false;
 
-          directory = ./assets/wallpapers/main;
-          directory_light = ./assets/wallpapers/main;
-          directory_dark = ./assets/wallpapers/main;
+          directory = ./assets/wallpapers;
+          directory_light = ./assets/wallpapers;
+          directory_dark = ./assets/wallpapers;
 
           per_monitor_directories = true;
 
