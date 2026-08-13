@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 {
-  fonts.packages = [
-    pkgs.nerd-fonts.fira-code
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
   ];
 }
