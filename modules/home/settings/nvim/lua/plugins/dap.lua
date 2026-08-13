@@ -1,8 +1,11 @@
 local dap = require("dap")
 local dapui = require("dapui")
+local dapvt = require("nvim-dap-virtual-text")
 local dotnet = require("utils.nvim-dap-dotnet")
 
 dapui.setup()
+dapvt.setup()
+
 
 -- netcoredbg adapter
 dap.adapters.coreclr = {
