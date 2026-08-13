@@ -19,10 +19,6 @@
     defaultSession = "niri";
   };
 
-  environment.systemPackages = with pkgs; [
-    xwayland-satellite # xwayland support
-  ];
-
   users.users.wiqht = {
     isNormalUser = true;
     description = "wiqht";
