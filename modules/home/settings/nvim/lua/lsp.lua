@@ -1,3 +1,7 @@
+local servers = { "nixd", "lua_ls", "roslyn" }
+
+vim.lsp.config("nixd", {})
+
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
@@ -6,4 +10,6 @@ vim.lsp.config("lua_ls", {
     },
 })
 
-vim.lsp.enable({ "nixd", "lua_ls" })
+vim.lsp.config("roslyn", {})
+
+vim.lsp.enable(servers)

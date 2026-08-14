@@ -27,11 +27,14 @@
 
     plugins = with pkgs.vimPlugins; [
       which-key-nvim
-      roslyn-nvim
-      neogit
-      nvim-tree-lua
       fzf-lua
+
+      neogit
       gitsigns-nvim
+
+      roslyn-nvim
+
+      nvim-tree-lua
       nvim-autopairs
       nvim-lspconfig
 
@@ -43,8 +46,22 @@
       nvim-dap-ui
       nvim-dap-virtual-text
 
-      # mason-nvim
-      # nvim-treesitter
+      # Treesitter
+      (nvim-treesitter.withPlugins (p: [
+        # Defaults
+        p.c
+        p.lua
+        p.markdown
+        p.markdown_inline
+        p.query
+        p.vim
+        p.vimdoc
+
+        # Extras
+        p.nix
+        p.c_sharp
+      ]))
+
     ];
   };
 
