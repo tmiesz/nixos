@@ -47,6 +47,11 @@
           };
         };
 
+        shell.launcher = {
+            categories = false;
+            compact = false;
+        };
+
         # Wallpaper related settings
         wallpaper = {
           enabled = true;
