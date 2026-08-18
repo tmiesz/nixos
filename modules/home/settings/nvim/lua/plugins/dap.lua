@@ -1,28 +1,32 @@
 local dap = require("dap")
-local dapui = require("dapui")
 local dapvt = require("nvim-dap-virtual-text")
-local dotnet = require("utils.nvim-dap-dotnet")
+local dllautopicker = require("utils.dap-dll-autopicker")
+local neotest = require("neotest")
+-- currently broken https://github.com/Issafalcon/neotest-dotnet/issues/145
+local neotestdotnet = require("neotest-dotnet")
 
-dapui.setup()
 dapvt.setup()
-
+neotest.setup({ adapters = { neotestdotnet } })
 
 -- netcoredbg adapter
-dap.adapters.coreclr = {
-  type = "executable",
-  command = "netcoredbg",
-  args = { "--interpreter=vscode" },
+local netcoredbg_adapter = {
+    type = "executable",
+    command = "netcoredbg",
+    args = { "--interpreter=vscode" },
 }
 
+dap.adapters.netcoredbg = netcoredbg_adapter -- needed for normal debugging
+dap.adapters.coreclr = netcoredbg_adapter    -- needed for unit test debugging
+
 dap.configurations.cs = {
-  {
-    type = "coreclr",
-    name = "launch - netcoredbg",
-    request = "launch",
-    program = function()
-      return dotnet.build_dll_path()
-    end,
-  },
+    {
+        type = "coreclr",
+        name = "launch - netcoredbg",
+        request = "launch",
+        program = function()
+            return dllautopicker.build_dll_path()
+        end,
+    },
 }
 
 -- Keymaps
@@ -35,14 +39,16 @@ vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
 vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
 vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step out" })
-vim.keymap.set("n", "<S-F11>", dap.step_out, { desc = "Step out" })
+vim.keymap.set("n", "<F8>", dap.step_out, { desc = "Step out" })
 vim.keymap.set("n", "<leader>dr", dap.repl.toggle, { desc = "Toggle REPL" })
-vim.keymap.set("n", "<leader>dt", dap.terminate, { desc = "Terminate session" })
-vim.keymap.set("n", "<leader>du", function() dapui.toggle() end, { desc = "Toggle debugger ui" })
+vim.keymap.set("n", "<leader>dx", dap.terminate, { desc = "Terminate session" })
+vim.keymap.set("n", "<leader>dl", dap.run_last, { desc = "Run last" })
+vim.keymap.set("n", "<leader>dt", function() neotest.run.run({ strategy = 'dap' }) end, { desc = "Debug nearest test" })
+vim.keymap.set("n", "<F6>", function() neotest.run.run({ strategy = 'dap' }) end, { desc = "Debug nearest test" })
 vim.keymap.set("n", "<leader>dC", function()
-  local config = vim.deepcopy(dap.configurations.cs[1])
-  config.args = vim.split(vim.fn.input("Arguments: "), " ")
-  dap.run(config)
+    local config = vim.deepcopy(dap.configurations.cs[1])
+    config.args = vim.split(vim.fn.input("Arguments: "), " ")
+    dap.run(config)
 end, {
-  desc = "Debug with arguments",
+    desc = "Debug with arguments",
 })

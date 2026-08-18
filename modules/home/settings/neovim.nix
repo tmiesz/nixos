@@ -45,6 +45,7 @@
       nvim-dap
       nvim-dap-ui
       nvim-dap-virtual-text
+      neotest-dotnet
 
       # Treesitter
       (nvim-treesitter.withPlugins (p: [
