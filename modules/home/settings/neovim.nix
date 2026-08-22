@@ -47,6 +47,9 @@
       nvim-dap-virtual-text
       neotest-dotnet
 
+      # Http requests
+      kulala-nvim
+
       # Treesitter
       (nvim-treesitter.withPlugins (p: [
         # Defaults
