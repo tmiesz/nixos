@@ -52,7 +52,6 @@
             compact = false;
         };
 
-        # Wallpaper related settings
         wallpaper = {
           enabled = true;
 
