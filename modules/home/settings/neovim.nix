@@ -23,6 +23,10 @@
       # Csharp
       roslyn-ls
       netcoredbg
+
+      # Web
+      vtsls
+      vscode-langservers-extracted
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -38,7 +42,7 @@
       nvim-autopairs
       nvim-lspconfig
 
-      mini-completion
+      blink-cmp
       mini-snippets
 
       # Debugger
@@ -64,6 +68,14 @@
         # Extras
         p.nix
         p.c_sharp
+        p.json
+
+        # Web
+        p.javascript
+        p.typescript
+        p.tsx
+        p.html
+        p.css
       ]))
 
     ];
