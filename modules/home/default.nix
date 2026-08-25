@@ -18,6 +18,7 @@
     neovim.enable = true;
     doom-emacs.enable = true;
     discord.enable = true;
+    tmux.enable = true;
   };
 
   home.packages = with pkgs; [
