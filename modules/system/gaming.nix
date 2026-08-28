@@ -13,6 +13,9 @@
       args = [
         "--prefer-output DP-4"
         "-W2560 -H1440 -r360"
+        "-f"
+        "--force-grab-cursor"
+        "--mouse-sensitivity 1.5"
       ];
     };
     gamemode.enable = true;
