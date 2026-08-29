@@ -15,7 +15,7 @@
         "-W2560 -H1440 -r360"
         "-f"
         "--force-grab-cursor"
-        "--mouse-sensitivity 1.5"
+        "--mouse-sensitivity 1.75"
       ];
     };
     gamemode.enable = true;
