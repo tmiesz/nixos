@@ -1,6 +1,7 @@
 require("options")
 require("keymaps")
 require("lsp")
+require("statusline")
 
 require("plugins.blink")
 require("plugins.dap")
