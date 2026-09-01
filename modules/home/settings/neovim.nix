@@ -27,6 +27,8 @@
       # web
       vscode-langservers-extracted
       typescript-language-server
+      tailwindcss-language-server
+      eslint
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -41,6 +43,7 @@
       nvim-tree-lua
       nvim-autopairs
       nvim-lspconfig
+      nvim-ts-autotag
 
       blink-cmp
       mini-snippets

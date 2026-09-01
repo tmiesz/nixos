@@ -17,6 +17,7 @@ local servers = {
     "cssls",
     "ts_ls",
     "eslint",
+    "tailwindcss",
 }
 
 vim.lsp.config("lua_ls", {
