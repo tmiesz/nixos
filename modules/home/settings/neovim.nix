@@ -11,22 +11,22 @@
     withPython3 = false;
 
     extraPackages = with pkgs; [
-      # General
+      # general
 
-      # Lua
+      # lua
       lua-language-server
 
-      # Nix
+      # nix
       nixd
       nixfmt
 
-      # Csharp
+      # csharp
       roslyn-ls
       netcoredbg
 
-      # Web
-      vtsls
+      # web
       vscode-langservers-extracted
+      typescript-language-server
     ];
 
     plugins = with pkgs.vimPlugins; [

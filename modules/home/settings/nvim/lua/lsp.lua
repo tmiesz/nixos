@@ -1,15 +1,23 @@
 local servers = {
-    "nixd",
+    -- general
+    "jsonls",
+
+    -- lua
     "lua_ls",
+
+    -- nix
+    "nixd",
+
+    -- csharp
     "roslyn",
 
-    "vtsls",
+
+    -- web
     "html",
     "cssls",
-    "jsonls",
+    "ts_ls",
+    "eslint",
 }
-
-vim.lsp.config("nixd", {})
 
 vim.lsp.config("lua_ls", {
     settings = {
@@ -20,15 +28,5 @@ vim.lsp.config("lua_ls", {
         },
     },
 })
-
-vim.lsp.config("roslyn", {})
-
-vim.lsp.config("vtsls", {})
-
-vim.lsp.config("html", {})
-
-vim.lsp.config("cssls", {})
-
-vim.lsp.config("jsonls", {})
 
 vim.lsp.enable(servers)
