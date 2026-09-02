@@ -19,6 +19,7 @@
     doom-emacs.enable = true;
     discord.enable = true;
     tmux.enable = true;
+    direnv.enable = true;
   };
 
   home.packages = with pkgs; [
