@@ -2,32 +2,12 @@
 
 {
   programs.tmux = {
-
-    shortcut = "Space";
-    baseIndex = 1;
-    clock24 = true;
     keyMode = "vi";
-    terminal = "xterm-256color";
-    mouse = true;
     shell = "${pkgs.zsh}/bin/zsh";
 
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       sensible
-
-      {
-        plugin = catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_window_text "#W"
-          set -g @catppuccin_window_current_text "#W"
-
-          set -g status-right-length 100
-          set -g status-left-length 100
-          set -g status-left ""
-          set -g status-right "#{E:@catppuccin_status_session}"
-        '';
-      }
-
       {
         plugin = resurrect;
         extraConfig = ''
@@ -37,7 +17,49 @@
     ];
 
     extraConfig = ''
-      set-option -g status-position top
+      # Options
+      set -sg terminal-overrides ",*:RGB"  # true color support
+      set -g escape-time 0  # disable delays on escape sequences
+      set -g mouse on
+      set -g renumber-windows on  # keep numbering sequential
+      set -g repeat-time 1000  # increase "prefix-free" window
+
+      # Options: start indexes from 1
+      set -g base-index 1
+      set -g pane-base-index 1
+
+      # Theme: borders
+      set -g pane-border-lines simple
+      set -g pane-border-style fg=black,bright
+      set -g pane-active-border-style fg=magenta
+
+      # Theme: status
+      set -g status-position top
+      set -g status-style bg=default,fg=black,bright
+      set -g status-left ""
+      set -g status-right "#[fg=magenta,bright]#S"
+
+      # Theme: status (windows)
+      set -g window-status-format "●"
+      set -g window-status-current-format "●"
+
+      set -g window-status-style fg=brightblack
+      set -g window-status-current-style "#{?window_zoomed_flag,fg=yellow,fg=magenta\#,nobold}"
+      set -g window-status-bell-style "fg=red,nobold"
+
+      # Change prefix
+      unbind C-b
+      set -g prefix `
+      bind ` send-prefix
+
+      # Keybindings: split
+      bind | split-window -h -c "#{pane_current_path}"
+      bind - split-window -v -c "#{pane_current_path}"
+
+      # Keybindings: other
+      bind f resize-pane -Z
+      bind q detach-client
+      bind e choose-window -Z
     '';
   };
 }
