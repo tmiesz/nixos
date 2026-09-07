@@ -45,6 +45,8 @@
       nvim-lspconfig
       nvim-ts-autotag
 
+      tiny-inline-diagnostic-nvim
+
       blink-cmp
       mini-snippets
 
