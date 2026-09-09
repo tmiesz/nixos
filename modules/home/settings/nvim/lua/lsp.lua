@@ -11,7 +11,6 @@ local servers = {
     -- csharp
     "roslyn",
 
-
     -- web
     "html",
     "cssls",
