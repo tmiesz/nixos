@@ -3,6 +3,8 @@ require("keymaps")
 require("lsp")
 require("statusline")
 
+require("colors.ultraviolet")
+
 require("plugins.blink")
 require("plugins.dap")
 require("plugins.dapui")
