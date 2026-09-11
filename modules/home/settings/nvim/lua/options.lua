@@ -17,7 +17,7 @@ vim.opt.smartindent = true                           -- smart auto indent
 vim.opt.autoindent = true                            -- copy indent from current line
 
 vim.opt.ignorecase = true                            -- case insensitive search
-vim.opt.smartcase = true                             --case sensitive if uppercase in string
+vim.opt.smartcase = true                             -- case sensitive if uppercase in string
 vim.opt.hlsearch = true                              -- highlight search matches
 vim.opt.incsearch = true                             -- show matches as you type
 
@@ -58,13 +58,14 @@ vim.opt.foldmethod = "expr"                          -- use expression for foldi
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- use treesitter for folding
 vim.opt.foldlevel = 99                               -- start with all folds open
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.splitbelow = true                            -- new horizontal splits open below the current window
+vim.opt.splitright = true                            -- new vertical splits open to the right of the current window
 
-vim.opt.wildmenu = true                -- tab completion
-vim.opt.wildmode = "longest:full,full" -- complete longest common match, full completion list, cycle through with Tab
-vim.opt.diffopt:append("linematch:60") -- improve diff display
-vim.opt.redrawtime = 10000             -- increase neovim redraw tolerance
-vim.opt.maxmempattern = 20000          -- increase max memory
+vim.opt.diffopt:append("linematch:60")               -- improve diff display
+vim.opt.redrawtime = 10000                           -- increase neovim redraw tolerance
+vim.opt.maxmempattern = 20000                        -- increase max memory
 
-vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics messages
+vim.diagnostic.config({ virtual_text = true })       -- inline diagnostics messages
+
+vim.g.dotnet_errors_only = true                      -- show only errors within :make :copen
+vim.g.dotnet_show_project_file = false               -- hide path within :make :copen
