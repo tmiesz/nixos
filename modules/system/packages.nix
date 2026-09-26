@@ -11,4 +11,6 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite # xwayland support
   ];
+
+  virtualisation.docker.enable = true;
 }
