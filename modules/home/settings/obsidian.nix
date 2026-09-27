@@ -38,12 +38,7 @@
       };
 
       corePlugins = [
-        "file-explorer"
-        "global-search"
-        "switcher"
         "command-palette"
-        "bookmarks"
-        "file-recovery"
         {
           name = "daily-notes";
           settings = {
@@ -51,6 +46,13 @@
             format = "DD-MM-YYYY";
           };
         }
+        "file-explorer"
+        "file-recovery"
+        "global-search"
+        "graph"
+        "note-composer"
+        "page-preview"
+        "switcher"
       ];
 
       communityPlugins = with pkgs.obsidianPlugins; [
