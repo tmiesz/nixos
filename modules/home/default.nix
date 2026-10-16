@@ -1,5 +1,10 @@
 { pkgs, lib, ... }:
 
+let
+  logseq-patch = pkgs.logseq.override {
+    electron_39 = pkgs.electron_41;
+  };
+in
 {
   imports = builtins.filter (lib.hasSuffix ".nix") (lib.filesystem.listFilesRecursive ./settings);
 
@@ -28,5 +33,6 @@
     nautilus
     protontricks
     godot
+    logseq-patch
   ];
 }
