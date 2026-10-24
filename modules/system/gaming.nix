@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs = {
     steam = {
@@ -18,6 +19,11 @@
         "--mouse-sensitivity 1.8"
       ];
     };
+
     gamemode.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    lutris
+  ];
 }
