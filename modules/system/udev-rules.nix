@@ -5,5 +5,8 @@
 
     # G-Wolves HSK Pro
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="33e4", MODE="0666"
+
+    # Shure MV7+
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="14ed", ATTRS{idProduct}=="1019", MODE="0666"
   '';
 }
