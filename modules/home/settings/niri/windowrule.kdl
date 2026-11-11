@@ -2,6 +2,7 @@ window-rule {
     open-maximized true
     geometry-corner-radius 10
     clip-to-geometry true
+    open-on-output "DP-4"
 }
 
 window-rule {
