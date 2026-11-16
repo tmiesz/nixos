@@ -17,9 +17,9 @@
       };
 
       commit = {
-        template =  "${./git/gittemplate}";
+        template = "${./git/gittemplate}";
       };
- 
+
       status = {
         short = true;
         branch = true;
