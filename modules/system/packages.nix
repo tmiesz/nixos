@@ -16,6 +16,7 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite # xwayland support
     python3 # for appimage
+    wootility
   ];
 
   virtualisation.docker.enable = true;
