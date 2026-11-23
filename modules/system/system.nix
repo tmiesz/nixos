@@ -4,10 +4,9 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = "/etc/nixos";
+    flake = "path:/home/wiqht/nixos";
     flags = [
       "--print-build-logs"
-      "--commit-lock-file"
     ];
     dates = "weekly";
   };
