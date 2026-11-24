@@ -34,5 +34,6 @@ in
     protontricks
     godot
     logseq-patch
+    krita
   ];
 }
