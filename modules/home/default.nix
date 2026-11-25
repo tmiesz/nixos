@@ -35,5 +35,6 @@ in
     godot
     logseq-patch
     krita
+    libreoffice
   ];
 }
