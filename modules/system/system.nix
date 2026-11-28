@@ -4,7 +4,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = "path:/home/wiqht/nixos";
+    flake = "/home/wiqht/nixos";
     flags = [
       "--print-build-logs"
     ];
